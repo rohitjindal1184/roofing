@@ -1,0 +1,36 @@
+import Link from "next/link";
+
+import { site } from "@/lib/site";
+import { PhoneIcon } from "@/components/ui";
+
+/**
+ * Fixed bottom action bar, mobile only (hidden from `md` up, where the header
+ * already carries a visible phone number and quote button).
+ *
+ * The matching bottom padding on <body> lives in globals.css so this bar never
+ * covers page content or the footer.
+ */
+export default function MobileCtaBar() {
+  return (
+    <div
+      className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-ink-900/98 backdrop-blur-sm md:hidden"
+      style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+    >
+      <div className="grid grid-cols-2">
+        <a
+          href={site.phoneHref}
+          className="flex items-center justify-center gap-2 py-4 font-display text-lg font-semibold uppercase tracking-[0.08em] text-white"
+        >
+          <PhoneIcon className="h-[1.15rem] w-[1.15rem] text-brand-400" />
+          Call Now
+        </a>
+        <Link
+          href="/contact"
+          className="flex items-center justify-center gap-2 bg-brand-600 py-4 font-display text-lg font-semibold uppercase tracking-[0.08em] text-white"
+        >
+          Get a Quote
+        </Link>
+      </div>
+    </div>
+  );
+}
