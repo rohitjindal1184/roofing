@@ -67,7 +67,7 @@ export function StatsBand() {
             </p>
           </div>
 
-          <dl className="grid gap-px overflow-hidden border border-white/10 bg-white/10 sm:grid-cols-3">
+          <dl className="grid gap-px overflow-hidden rounded-surface border border-white/10 bg-white/10 sm:grid-cols-3">
             {stats.map((stat, index) => (
               <div
                 key={stat.label}
@@ -110,7 +110,7 @@ export function ServiceCard({
     <article
       data-reveal
       style={{ "--reveal-delay": `${(index % 3) * 90}ms` } as React.CSSProperties}
-      className="group relative flex flex-col border border-bone-300 bg-bone-50 transition-colors duration-200 hover:border-brand-600"
+      className="group relative flex flex-col overflow-hidden rounded-surface bg-bone-50 shadow-card transition-[box-shadow,transform] duration-200 hover:-translate-y-1 hover:shadow-card-hover"
     >
       <div className="relative aspect-[3/2] overflow-hidden bg-ink-800">
         <Image
@@ -173,7 +173,7 @@ export function ServiceAreaChips({
         <li key={city.id}>
           <Link
             href={cityPath(city)}
-            className="inline-block border border-bone-300 bg-bone-50 px-3.5 py-2 text-sm font-medium text-ink-800 transition-colors hover:border-brand-600 hover:text-brand-800"
+            className="inline-block rounded-control border border-bone-300 bg-bone-50 px-3.5 py-2 text-sm font-medium text-ink-800 transition-colors hover:border-brand-600 hover:text-brand-800"
           >
             {city.name}
           </Link>

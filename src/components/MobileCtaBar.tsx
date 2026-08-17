@@ -13,7 +13,7 @@ import { PhoneIcon } from "@/components/ui";
 export default function MobileCtaBar() {
   return (
     <div
-      className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-ink-900/98 backdrop-blur-sm md:hidden"
+      className="fixed inset-x-0 bottom-0 z-40 [transform:translateZ(0)] border-t border-white/10 bg-ink-900 shadow-float will-change-transform md:hidden"
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
       <div className="grid grid-cols-2">

@@ -9,6 +9,7 @@ import {
   StatsBand,
   TrustBar,
 } from "@/components/sections";
+import Hero from "@/components/hero/Hero";
 import {
   ArrowRight,
   ButtonLink,
@@ -152,85 +153,10 @@ export default function HomePage() {
       <LocalBusinessJsonLd />
 
       {/* ---------------------------------------------------------------- */}
-      {/* Hero                                                              */}
+      {/* Hero — variant picked by NEXT_PUBLIC_HERO_VARIANT, see            */}
+      {/* src/lib/experiments.ts and src/components/hero/Hero.tsx          */}
       {/* ---------------------------------------------------------------- */}
-      <section className="relative isolate overflow-hidden bg-ink-950">
-        <Image
-          src="/images/hero-roofing-crew-panorama.jpg"
-          alt="ONE ROOFING crew working on a row of residential roofs on a clear Bay Area morning"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-[70%_center]"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/88 to-ink-950/30"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink-950 to-transparent"
-        />
-
-        <Container className="relative flex min-h-[34rem] flex-col justify-center py-16 sm:min-h-[38rem] sm:py-24 lg:min-h-[44rem]">
-          <div className="max-w-3xl">
-            <p className="eyebrow flex items-center gap-3 text-brand-400">
-              <span
-                aria-hidden="true"
-                className="inline-block h-px w-10 bg-brand-400"
-              />
-              San Francisco &amp; Bay Area · Licensed, Bonded &amp; Insured
-            </p>
-
-            <h1 className="mt-5 font-display text-[2.75rem] font-bold uppercase leading-[0.98] text-white sm:text-6xl lg:text-7xl">
-              Roofs built to take
-              <span className="block text-brand-500">
-                everything the Bay throws at them
-              </span>
-            </h1>
-
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-bone-200 sm:text-xl">
-              Replacement, repair and inspection for homes and commercial
-              buildings across San Francisco and 30+ Bay Area cities — backed by
-              300+ completed projects and an industry-leading warranty.
-            </p>
-
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <ButtonLink href="/contact" variant="primary">
-                Get a Free Quote
-                <ArrowRight />
-              </ButtonLink>
-              <ButtonLink href={site.phoneHref} variant="onDark">
-                Call {site.phoneDisplay}
-              </ButtonLink>
-            </div>
-
-            <dl className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-white/15 pt-6 text-sm">
-              <div>
-                <dt className="uppercase tracking-[0.16em] text-bone-300">
-                  24/7 emergency line
-                </dt>
-                <dd className="mt-1">
-                  <a
-                    href={site.phoneHref}
-                    className="font-display text-2xl font-semibold text-white transition-colors hover:text-brand-400"
-                  >
-                    {site.phoneDisplay}
-                  </a>
-                </dd>
-              </div>
-              <div>
-                <dt className="uppercase tracking-[0.16em] text-bone-300">
-                  Office hours
-                </dt>
-                <dd className="mt-1 font-display text-2xl font-semibold text-white">
-                  {site.hours.display}
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </Container>
-      </section>
+      <Hero />
 
       <TrustBar />
 
@@ -287,7 +213,7 @@ export default function HomePage() {
         <Container className="py-16 sm:py-24">
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
             <div data-reveal="left" className="relative">
-              <div className="relative aspect-[4/5] w-full overflow-hidden bg-ink-800 sm:aspect-[5/4] lg:aspect-[4/5]">
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-surface bg-ink-800 shadow-card sm:aspect-[5/4] lg:aspect-[4/5]">
                 <Image
                   src="/images/why-choose-one-roofing.jpg"
                   alt="ONE ROOFING technician on a ladder at the eaves of a Bay Area home, hammer in hand and toolbox on the roof edge"
@@ -296,7 +222,7 @@ export default function HomePage() {
                   className="object-cover object-center"
                 />
               </div>
-              <div className="absolute -bottom-px left-0 bg-brand-600 px-6 py-5 text-white sm:px-8">
+              <div className="absolute -bottom-6 left-6 rounded-surface bg-brand-600 px-6 py-5 text-white shadow-float sm:px-8">
                 <p className="font-display text-4xl font-bold leading-none">
                   15+
                 </p>
@@ -379,7 +305,7 @@ export default function HomePage() {
                 style={
                   { "--reveal-delay": `${(index % 2) * 90}ms` } as React.CSSProperties
                 }
-                className={`relative aspect-[16/10] overflow-hidden bg-ink-800 lg:aspect-auto lg:h-full ${item.className}`}
+                className={`relative aspect-[16/10] overflow-hidden rounded-surface bg-ink-800 shadow-card lg:aspect-auto lg:h-full ${item.className}`}
               >
                 <Image
                   src={item.src}

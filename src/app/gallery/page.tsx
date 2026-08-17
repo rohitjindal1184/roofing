@@ -163,7 +163,7 @@ export default function GalleryPage() {
                 style={
                   { "--reveal-delay": `${(index % 3) * 80}ms` } as React.CSSProperties
                 }
-                className={`group relative overflow-hidden bg-ink-800 ${item.span}`}
+                className={`group relative overflow-hidden rounded-surface bg-ink-800 shadow-card ${item.span}`}
               >
                 <div className={`relative w-full ${item.aspect}`}>
                   <Image

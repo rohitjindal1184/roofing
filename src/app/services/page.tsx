@@ -89,7 +89,7 @@ export default function ServicesPage() {
                   style={
                     { "--reveal-delay": `${index * 90}ms` } as React.CSSProperties
                   }
-                  className="border-t-2 border-brand-600 bg-bone-50 p-7"
+                  className="rounded-b-surface border-t-2 border-brand-600 bg-bone-50 p-7 shadow-card"
                 >
                   <h3 className="font-display text-2xl font-semibold uppercase leading-tight">
                     {segment.title}
@@ -102,7 +102,7 @@ export default function ServicesPage() {
 
           <div
             data-reveal
-            className="mt-12 flex flex-col gap-5 border border-bone-300 bg-bone-50 p-7 sm:flex-row sm:items-center sm:justify-between sm:p-9"
+            className="mt-12 flex flex-col gap-5 rounded-surface bg-bone-50 p-7 shadow-card sm:flex-row sm:items-center sm:justify-between sm:p-9"
           >
             <div>
               <h2 className="font-display text-2xl font-semibold uppercase leading-tight sm:text-3xl">

@@ -35,6 +35,24 @@
 
   --font-display: var(--font-barlow-condensed), "Arial Narrow", sans-serif;
   --font-sans: var(--font-source-sans), ui-sans-serif, system-ui, sans-serif;
+
+  /* Two-tier corner system: controls (buttons, inputs, chips) get the
+     smaller radius; contained surfaces (cards, panels, image frames,
+     floating badges) get the larger one. Full-width bands and hairline
+     rules stay square — see DESIGN.md "Shapes". */
+  --radius-control: 0.625rem;
+  --radius-surface: 1rem;
+
+  /* Warm-tinted, soft-blur shadows (never a zero-offset colored halo) for
+     surfaces that are genuinely raised off the page. Ledger/structural
+     surfaces (hairline grids, dividers, full-width bands) stay flat and
+     keep their border instead — elevation is declared once, never both. */
+  --shadow-xs: 0 1px 2px 0 rgb(16 19 23 / 0.06);
+  --shadow-card: 0 1px 2px 0 rgb(16 19 23 / 0.04), 0 12px 28px -12px rgb(16 19 23 / 0.18);
+  --shadow-card-hover: 0 2px 4px 0 rgb(16 19 23 / 0.05), 0 22px 40px -14px rgb(16 19 23 / 0.24);
+  --shadow-button: 0 1px 2px 0 rgb(16 19 23 / 0.1), 0 10px 20px -8px rgb(199 74 24 / 0.32);
+  --shadow-button-hover: 0 2px 4px 0 rgb(16 19 23 / 0.12), 0 16px 28px -8px rgb(169 59 18 / 0.38);
+  --shadow-float: 0 10px 20px -4px rgb(16 19 23 / 0.18), 0 30px 54px -18px rgb(16 19 23 / 0.32);
 }
 
 /* Element defaults live in @layer base so Tailwind utilities (text-white,
@@ -117,6 +135,102 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* =========================================================================
+   Hero entrance
+   The homepage hero is above the fold, so it animates on paint rather than
+   on intersection: a staggered rise-and-fade for the text stack, plus a
+   slow continuous Ken Burns drift on the photo behind it. Scroll-linked
+   parallax on the same photo is handled in JS by HeroParallax.tsx, on a
+   separate wrapping element so the two transforms never fight.
+   ========================================================================= */
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 26px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+[data-hero-in] {
+  opacity: 0;
+  animation: hero-rise 760ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--hero-delay, 0ms);
+}
+
+@keyframes hero-zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.07);
+  }
+}
+
+.hero-media {
+  animation: hero-zoom 20s cubic-bezier(0.25, 0, 0.4, 1) forwards;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-media {
+    animation: none;
+  }
+}
+
+/* =========================================================================
+   Hero scroll variants (see src/lib/experiments.ts)
+   ========================================================================= */
+
+/* parallax-settle: HeroScrollDriver writes --hero-p (0→1, how far the hero
+   has scrolled past the top of the viewport) onto [data-hero-scroll]. Content
+   scales down and fades, the scrim deepens slightly, as the hero leaves. The
+   custom property inherits to descendants, so no extra JS per layer. */
+[data-hero-scroll] {
+  --hero-p: 0;
+}
+
+[data-hero-scroll] [data-hero-layer="content"] {
+  transform: scale(calc(1 - var(--hero-p) * 0.08)) translate3d(0, calc(var(--hero-p) * -16px), 0);
+  opacity: calc(1 - var(--hero-p) * 1.15);
+}
+
+[data-hero-scroll] [data-hero-layer="scrim"] {
+  opacity: calc(0.85 + var(--hero-p) * 0.15);
+}
+
+/* stats-rise: the compact proof-stat row starts hidden below its resting
+   position and rises into place as StatsRiseStrip advances --stats-p. */
+[data-stats-rise] {
+  --stats-p: 0;
+  opacity: var(--stats-p);
+  transform: translate3d(0, calc((1 - var(--stats-p)) * 22px), 0);
+}
+
+/* chevron-cue: a small bouncing scroll indicator, faded out once the visitor
+   actually starts scrolling (handled by ScrollCue.tsx toggling opacity). */
+@keyframes hero-chevron-nudge {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, 6px, 0);
+  }
+}
+
+[data-hero-chevron] svg {
+  animation: hero-chevron-nudge 2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-hero-chevron] svg {
+    animation: none;
   }
 }
 

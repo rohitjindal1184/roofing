@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-28T00:00:00Z",
+  "title": "Design System: ONE ROOFING",
+  "extensions": {
+    "colorMeta": {
+      "site-safety-orange": {
+        "role": "primary",
+        "displayName": "Site Safety Orange",
+        "canonical": "#c74a18",
+        "tonalRamp": ["#2b1006", "#4a1c0a", "#6d290e", "#a93b12", "#c74a18", "#e8622c", "#f07a45", "#f7c9b3"]
+      },
+      "safety-orange-bright": {
+        "role": "primary",
+        "displayName": "Safety Orange Bright",
+        "canonical": "#f07a45",
+        "tonalRamp": ["#2b1006", "#4a1c0a", "#6d290e", "#a93b12", "#c74a18", "#e8622c", "#f07a45", "#f7c9b3"]
+      },
+      "safety-orange": {
+        "role": "primary",
+        "displayName": "Safety Orange",
+        "canonical": "#e8622c",
+        "tonalRamp": ["#2b1006", "#4a1c0a", "#6d290e", "#a93b12", "#c74a18", "#e8622c", "#f07a45", "#f7c9b3"]
+      },
+      "safety-orange-deep": {
+        "role": "primary",
+        "displayName": "Safety Orange Deep",
+        "canonical": "#a93b12",
+        "tonalRamp": ["#2b1006", "#4a1c0a", "#6d290e", "#a93b12", "#c74a18", "#e8622c", "#f07a45", "#f7c9b3"]
+      },
+      "safety-orange-text": {
+        "role": "primary",
+        "displayName": "Safety Orange Text",
+        "canonical": "#b4400f",
+        "tonalRamp": ["#2b1006", "#4a1c0a", "#6d290e", "#a93b12", "#c74a18", "#e8622c", "#f07a45", "#f7c9b3"]
+      },
+      "charcoal-deep": {
+        "role": "neutral",
+        "displayName": "Charcoal Deep",
+        "canonical": "#101317",
+        "tonalRamp": ["#0a0b0d", "#101317", "#15181d", "#1c2128", "#262c35", "#333a45", "#4a525f", "#8b93a0"]
+      },
+      "slate-steel": {
+        "role": "neutral",
+        "displayName": "Slate Steel",
+        "canonical": "#15181d",
+        "tonalRamp": ["#0a0b0d", "#101317", "#15181d", "#1c2128", "#262c35", "#333a45", "#4a525f", "#8b93a0"]
+      },
+      "sheet-metal": {
+        "role": "neutral",
+        "displayName": "Sheet Metal",
+        "canonical": "#1c2128",
+        "tonalRamp": ["#0a0b0d", "#101317", "#15181d", "#1c2128", "#262c35", "#333a45", "#4a525f", "#8b93a0"]
+      },
+      "bone-paper": {
+        "role": "neutral",
+        "displayName": "Bone Paper",
+        "canonical": "#faf9f7",
+        "tonalRamp": ["#2b2822", "#6b6459", "#a89f8f", "#ddd7ce", "#eeeae4", "#f7f5f2", "#faf9f7", "#fffdfb"]
+      },
+      "bone-card": {
+        "role": "neutral",
+        "displayName": "Bone Card",
+        "canonical": "#f7f5f2",
+        "tonalRamp": ["#2b2822", "#6b6459", "#a89f8f", "#ddd7ce", "#eeeae4", "#f7f5f2", "#faf9f7", "#fffdfb"]
+      },
+      "bone-shade": {
+        "role": "neutral",
+        "displayName": "Bone Shade",
+        "canonical": "#eeeae4",
+        "tonalRamp": ["#2b2822", "#6b6459", "#a89f8f", "#ddd7ce", "#eeeae4", "#f7f5f2", "#faf9f7", "#fffdfb"]
+      },
+      "bone-line": {
+        "role": "neutral",
+        "displayName": "Bone Line",
+        "canonical": "#ddd7ce",
+        "tonalRamp": ["#2b2822", "#6b6459", "#a89f8f", "#ddd7ce", "#eeeae4", "#f7f5f2", "#faf9f7", "#fffdfb"]
+      },
+      "body-ink": {
+        "role": "neutral",
+        "displayName": "Body Ink",
+        "canonical": "#3b414b",
+        "tonalRamp": ["#0a0b0d", "#101317", "#15181d", "#1c2128", "#262c35", "#333a45", "#4a525f", "#8b93a0"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display / Barlow Condensed", "purpose": "All structural chrome: headings, buttons, nav labels, eyebrows, stat numbers. Always uppercase." },
+      "body": { "displayName": "Body / Source Sans 3", "purpose": "Running prose: intros, descriptions, list copy. Sentence case only." },
+      "label": { "displayName": "Label / Eyebrow", "purpose": "Small uppercase kicker text preceded by a short orange rule, first element in a section's text block." },
+      "small": { "displayName": "Small", "purpose": "Compact running copy in tight contexts — card benefit lines, dropdown nav items, sidebar body text." },
+      "micro": { "displayName": "Micro", "purpose": "Smallest text in the system, reserved for the header's desktop-only utility strip." }
+    },
+    "shadows": [
+      { "name": "flyout-overlay", "value": "0 25px 50px -12px rgba(0,0,0,0.25)", "purpose": "The system's one shadow, reserved for the header's services flyout menu — a genuine floating overlay above page content. Never used on in-flow cards or buttons." }
+    ],
+    "motion": [
+      { "name": "color-transition", "value": "200ms ease", "purpose": "Default hover/focus transition for button and link color/border changes." },
+      { "name": "reveal", "value": "520ms cubic-bezier(0.22, 0.61, 0.36, 1)", "purpose": "Scroll-triggered fade + translate-in for section content (data-reveal). Disabled entirely under prefers-reduced-motion." },
+      { "name": "image-scale", "value": "500ms ease", "purpose": "Subtle scale-up (1.04x) on service card images on hover." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main CTA button — 'Get a Free Quote' and similar. Square, orange-filled, uppercase.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Get a Free Quote<svg class=\"ds-btn-icon\" viewBox=\"0 0 20 20\" fill=\"none\" aria-hidden=\"true\"><path d=\"M3 10h13m0 0-5-5m5 5-5 5\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"square\"/></svg></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 2px solid #c74a18; background: #c74a18; color: #ffffff; padding: 12px 28px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 18px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; text-decoration: none; border-radius: 0; transition: background 200ms ease, border-color 200ms ease; } .ds-btn-primary:hover, .ds-btn-primary:focus-visible { background: #a93b12; border-color: #a93b12; } .ds-btn-primary:focus-visible { outline: 3px solid #e8622c; outline-offset: 2px; } .ds-btn-icon { width: 16px; height: 16px; }"
+    },
+    {
+      "name": "On-Light Ghost Button",
+      "kind": "button",
+      "refersTo": "button-onLight",
+      "description": "Secondary action on light (bone) surfaces — outlined, inverts to solid on hover.",
+      "html": "<a class=\"ds-btn-ghost-light\" href=\"#\">More About Us</a>",
+      "css": ".ds-btn-ghost-light { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 2px solid #15181d; background: transparent; color: #15181d; padding: 12px 28px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 18px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; text-decoration: none; border-radius: 0; transition: background 200ms ease, color 200ms ease; } .ds-btn-ghost-light:hover, .ds-btn-ghost-light:focus-visible { background: #15181d; color: #ffffff; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Contact-form text field — square, bordered, orange focus border, no glow ring.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-field-label\" for=\"ds-name\">Your name</label><input class=\"ds-field-input\" id=\"ds-name\" type=\"text\" placeholder=\"Jane Alvarez\"/></div>",
+      "css": ".ds-field-label { display: block; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #15181d; } .ds-field-input { margin-top: 8px; width: 100%; border: 1px solid #ddd7ce; background: #ffffff; padding: 12px 16px; font-size: 16px; color: #15181d; border-radius: 0; } .ds-field-input::placeholder { color: rgba(74, 82, 95, 0.7); } .ds-field-input:focus { outline: none; border-color: #c74a18; }"
+    },
+    {
+      "name": "Service Card",
+      "kind": "card",
+      "refersTo": "service-card",
+      "description": "Image-topped card used for the six core services — square corners, border-color hover, image scale on hover.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card-image\"></div><div class=\"ds-card-body\"><h3 class=\"ds-card-title\">Flat Roof Replacement</h3><p class=\"ds-card-text\">Durable, fully weatherproofed flat roofing for homes and commercial buildings.</p><p class=\"ds-card-link\">View service details<svg viewBox=\"0 0 20 20\" fill=\"none\" width=\"16\" height=\"16\" aria-hidden=\"true\"><path d=\"M3 10h13m0 0-5-5m5 5-5 5\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"square\"/></svg></p></div></article>",
+      "css": ".ds-card { display: flex; flex-direction: column; border: 1px solid #ddd7ce; background: #faf9f7; border-radius: 0; transition: border-color 200ms ease; } .ds-card:hover { border-color: #c74a18; } .ds-card-image { aspect-ratio: 3 / 2; background: #1c2128; overflow: hidden; } .ds-card-body { padding: 24px; } .ds-card-title { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 24px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.02em; color: #15181d; line-height: 1.15; } .ds-card-text { margin-top: 12px; font-size: 15px; line-height: 1.6; color: #3b414b; } .ds-card-link { margin-top: 20px; display: inline-flex; align-items: center; gap: 8px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #b4400f; }"
+    },
+    {
+      "name": "Stat Tile",
+      "kind": "custom",
+      "refersTo": "stat-tile",
+      "description": "One cell in the hairline-divided stats grid ('300+ roofing projects completed') on a dark band.",
+      "html": "<div class=\"ds-stat\"><dd class=\"ds-stat-value\">300+</dd><dt class=\"ds-stat-label\">Roofing projects completed</dt><p class=\"ds-stat-detail\">Residential and commercial roofs across the Bay Area.</p></div>",
+      "css": ".ds-stat { background: #15181d; padding: 32px 24px; } .ds-stat-value { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 56px; font-weight: 700; line-height: 1; color: #e8622c; } .ds-stat-label { margin-top: 12px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 18px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #ffffff; } .ds-stat-detail { margin-top: 8px; font-size: 14px; line-height: 1.6; color: #eeeae4; }"
+    },
+    {
+      "name": "Numbered Step",
+      "kind": "custom",
+      "refersTo": "numbered-step",
+      "description": "Signature 'ledger entry' pattern: a small filled square numeral beside a line of process/checklist text.",
+      "html": "<div class=\"ds-step\"><span class=\"ds-step-num\" aria-hidden=\"true\">1</span><span class=\"ds-step-text\">On-site inspection and a written, itemised estimate — no guesswork pricing</span></div>",
+      "css": ".ds-step { display: flex; align-items: flex-start; gap: 12px; } .ds-step-num { flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; margin-top: 2px; background: #15181d; color: #ffffff; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 12px; font-weight: 700; } .ds-step-text { font-size: 15px; line-height: 1.6; color: #3b414b; }"
+    },
+    {
+      "name": "Eyebrow Label",
+      "kind": "custom",
+      "refersTo": "eyebrow",
+      "description": "Small uppercase kicker with a short orange rule, always the first element above a section heading.",
+      "html": "<p class=\"ds-eyebrow\"><span class=\"ds-eyebrow-rule\" aria-hidden=\"true\"></span>What we do</p>",
+      "css": ".ds-eyebrow { display: flex; align-items: center; gap: 12px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #b4400f; } .ds-eyebrow-rule { display: inline-block; height: 1px; width: 32px; background: #b4400f; }"
+    },
+    {
+      "name": "Primary Nav Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Desktop header navigation link on the dark main bar; active/hover shifts to bright orange, no underline or pill.",
+      "html": "<a class=\"ds-nav-link\" href=\"#\">Services</a>",
+      "css": ".ds-nav-link { display: block; padding: 8px 12px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 18px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #eeeae4; text-decoration: none; transition: color 200ms ease; } .ds-nav-link:hover, .ds-nav-link:focus-visible { color: #f07a45; } .ds-nav-link[aria-current=\"page\"] { color: #f07a45; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Job Site Ledger",
+    "overview": "ONE ROOFING's site reads like the paperwork the company is proud of: a written, itemized estimate, not a sales brochure. Everything is squared off, ruled, and numbered — hairline-divided stat grids, numbered process steps (01, 02, 03), bordered rectangles standing in for line items. There is no rounding, no softness, no ambiguity about where one thing ends and the next begins, because the brand's whole pitch is \"we tell you exactly what's there and what it costs.\" The palette pairs dark structural charcoal (the steel and hardware of a roof) with a warm, paper-like off-white (the estimate itself) and a single, deliberately rationed construction-safety orange that marks the one thing on any given screen that matters most: the call, the quote, the number.\n\nDensity is comfortable, not tight — this is a site for someone anxious about a leak, reading carefully, not skimming a dashboard. Type leans hard into an uppercase, condensed display face for anything structural (headings, labels, buttons, numbers) paired with a plain, humanist body sans for the actual explanation. The effect is a contractor's site sheet: bold section stamps over calm, readable paragraphs.",
+    "keyCharacteristics": [
+      "Squared, ruled, ledger-like structure — hairline dividers and numbered steps instead of shadows or gradients to create rhythm",
+      "Warm charcoal + warm bone neutrals + one rationed construction-orange accent",
+      "Condensed uppercase display type for anything structural; plain body sans for explanation",
+      "Flat by default; borders and color-block contrast carry depth, not elevation",
+      "Real job-site photography only, always with a heavy dark gradient scrim when type sits over it"
+    ],
+    "rules": [
+      { "name": "The One Orange Rule", "body": "Construction-orange is the only saturated hue in the system and it is rationed to the single most important action or number in any given view — a primary CTA, a stat, an active nav item, an eyebrow rule. If more than one element on a screen \"shouts\" in orange, something has drifted off-brief.", "section": "colors" },
+      { "name": "The Paired-Surface Rule", "body": "Each orange value is bound to a specific surface class: brand-400/brand-500 only appear on dark (ink-8/9/950) backgrounds; brand-800 only appears as text on light (bone-*) backgrounds; brand-600/brand-700 are the CTA-fill pair regardless of surface. Don't cross-wire them.", "section": "colors" },
+      { "name": "The Uppercase-Structure Rule", "body": "Anything that is structural chrome — headings, buttons, nav labels, eyebrows, stat labels — is Barlow Condensed and uppercase. Anything that is content a visitor reads sentence-by-sentence is Source Sans 3 and sentence case. Never uppercase a full paragraph; never set a heading in the body face.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Surfaces are flat at rest. Depth is carried by border + background-color contrast, never by shadow. There is exactly one shadow in the entire system (the header's services flyout), reserved for genuine floating overlays. Do not extend shadow use to cards, buttons, or any surface that sits in normal document flow.", "section": "elevation" },
+      { "name": "The Square-Corner Rule", "body": "Zero border-radius anywhere in the system — buttons, cards, images, form fields, chips, the mobile menu panel. Every corner is a hard 90°. This is the single most load-bearing visual signature of the brand and should never be softened, even locally, without an explicit redesign decision.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do keep every corner square — buttons, cards, images, inputs, menus. This is the system's signature, not a default left unstyled.",
+      "Do ration Site Safety Orange to one dominant use per screen (a CTA, a stat, an active state) per the One Orange Rule.",
+      "Do pair Barlow Condensed + uppercase for anything structural with Source Sans 3 + sentence case for anything read as prose; never mix the two roles.",
+      "Do use border + background-contrast for depth (light card on darker band, dark card on lighter band) instead of shadow.",
+      "Do use real job-site photography with a heavy dark gradient scrim (from-ink-950 via-ink-950/85–90 to-ink-950/30–60) whenever text sits over an image."
+    ],
+    "donts": [
+      "Don't introduce border-radius anywhere, even \"just a little\" on a new component — it breaks the ledger identity immediately.",
+      "Don't add drop shadows to cards, buttons, or in-flow surfaces. The one exception (services flyout) is reserved for genuine floating overlays only.",
+      "Don't use brand-400/brand-500 as text on light bone backgrounds or brand-800 on dark ink backgrounds — the paired-surface roles are fixed, not interchangeable shades of the same hue.",
+      "Don't introduce stock photography or illustration; the brand's evidentiary claim (\"real work, real crew\") depends on using only the client's own project photos."
+    ]
+  }
+}

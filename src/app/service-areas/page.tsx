@@ -134,7 +134,7 @@ export default function ServiceAreasPage() {
               </ul>
             </div>
 
-            <div data-reveal="right" className="bg-ink-900 p-8 text-bone-200 sm:p-10">
+            <div data-reveal="right" className="rounded-surface bg-ink-900 p-8 text-bone-200 shadow-card sm:p-10">
               <h2 className="font-display text-2xl font-semibold uppercase leading-tight text-white sm:text-3xl">
                 Not sure if we cover you?
               </h2>

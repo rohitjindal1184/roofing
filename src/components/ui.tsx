@@ -41,12 +41,12 @@ export function Eyebrow({
 }
 
 const buttonBase =
-  "inline-flex items-center justify-center gap-2 border-2 px-6 py-3 font-display text-base font-semibold uppercase tracking-[0.08em] transition-colors duration-200 sm:px-7 sm:text-lg";
+  "inline-flex items-center justify-center gap-2 rounded-control border-2 px-6 py-3 font-display text-base font-semibold uppercase tracking-[0.08em] transition-[color,background-color,border-color,box-shadow,transform] duration-200 sm:px-7 sm:text-lg active:translate-y-0 active:duration-75";
 
 export const buttonStyles = {
-  primary: `${buttonBase} border-brand-600 bg-brand-600 text-white hover:border-brand-700 hover:bg-brand-700`,
-  onDark: `${buttonBase} border-white/40 bg-transparent text-white hover:border-white hover:bg-white hover:text-ink-900`,
-  onLight: `${buttonBase} border-ink-900 bg-transparent text-ink-900 hover:bg-ink-900 hover:text-white`,
+  primary: `${buttonBase} border-brand-600 bg-brand-600 text-white shadow-button hover:-translate-y-0.5 hover:border-brand-700 hover:bg-brand-700 hover:shadow-button-hover active:translate-y-0 active:shadow-xs`,
+  onDark: `${buttonBase} border-white/40 bg-transparent text-white hover:-translate-y-0.5 hover:border-white hover:bg-white hover:text-ink-900`,
+  onLight: `${buttonBase} border-ink-900 bg-transparent text-ink-900 hover:-translate-y-0.5 hover:bg-ink-900 hover:text-white`,
 } as const;
 
 type ButtonLinkProps = {
