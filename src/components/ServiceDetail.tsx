@@ -91,7 +91,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
         <Container className="py-14 sm:py-20">
           <div className="grid gap-12 lg:grid-cols-[1fr_20rem] lg:gap-16">
             <div>
-              <figure data-reveal className="relative aspect-[16/9] overflow-hidden bg-ink-800">
+              <figure data-reveal className="relative aspect-[16/9] overflow-hidden rounded-surface bg-ink-800 shadow-card">
                 <Image
                   src={service.heroImage.src}
                   alt={service.heroImage.alt}
@@ -115,7 +115,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
               </div>
 
               <div data-reveal className="mt-12 grid gap-8 sm:grid-cols-2">
-                <div className="border-t-2 border-brand-600 bg-bone-50 p-6">
+                <div className="rounded-b-surface border-t-2 border-brand-600 bg-bone-50 p-6 shadow-card">
                   <h2 className="font-display text-2xl font-semibold uppercase leading-tight">
                     {service.signs.heading}
                   </h2>
@@ -131,7 +131,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
                   </ul>
                 </div>
 
-                <div className="border-t-2 border-ink-900 bg-bone-50 p-6">
+                <div className="rounded-b-surface border-t-2 border-ink-900 bg-bone-50 p-6 shadow-card">
                   <h2 className="font-display text-2xl font-semibold uppercase leading-tight">
                     {service.process.heading}
                   </h2>
@@ -140,7 +140,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
                       <li key={item} className="flex items-start gap-3">
                         <span
                           aria-hidden="true"
-                          className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center bg-ink-900 font-display text-xs font-bold text-white"
+                          className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-ink-900 font-display text-xs font-bold text-white"
                         >
                           {index + 1}
                         </span>
@@ -155,7 +155,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
 
               <div
                 data-reveal
-                className="mt-12 border border-bone-300 bg-bone-50 p-7 sm:p-9"
+                className="mt-12 rounded-surface bg-bone-50 p-7 shadow-card sm:p-9"
               >
                 <h2 className="font-display text-2xl font-semibold uppercase leading-tight sm:text-3xl">
                   Every {service.title.toLowerCase()} we do includes
@@ -182,7 +182,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
 
             {/* Sidebar */}
             <aside className="lg:sticky lg:top-28 lg:self-start">
-              <div data-reveal="right" className="bg-ink-900 p-7 text-bone-200">
+              <div data-reveal="right" className="rounded-surface bg-ink-900 p-7 text-bone-200 shadow-card">
                 <h2 className="font-display text-2xl font-semibold uppercase leading-tight text-white">
                   Talk to a roofer, not a call centre
                 </h2>
@@ -213,7 +213,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
               <nav
                 data-reveal="right"
                 aria-label="Other services"
-                className="mt-6 border border-bone-300 bg-bone-50 p-7"
+                className="mt-6 rounded-surface bg-bone-50 p-7 shadow-card"
               >
                 <h2 className="font-display text-xl font-semibold uppercase tracking-[0.06em]">
                   Other services

@@ -130,7 +130,7 @@ export default function ContactPage() {
             </div>
 
             <aside className="space-y-6">
-              <div data-reveal="right" className="border border-bone-300 bg-bone-50 p-7">
+              <div data-reveal="right" className="rounded-surface bg-bone-50 p-7 shadow-card">
                 <Eyebrow>What happens next</Eyebrow>
                 <ol className="mt-5 space-y-4">
                   {[
@@ -141,7 +141,7 @@ export default function ContactPage() {
                     <li key={step} className="flex items-start gap-3">
                       <span
                         aria-hidden="true"
-                        className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center bg-ink-900 font-display text-sm font-bold text-white"
+                        className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-ink-900 font-display text-sm font-bold text-white"
                       >
                         {index + 1}
                       </span>
@@ -153,7 +153,7 @@ export default function ContactPage() {
                 </ol>
               </div>
 
-              <div data-reveal="right" className="bg-ink-900 p-7 text-bone-200">
+              <div data-reveal="right" className="rounded-surface bg-ink-900 p-7 text-bone-200 shadow-card">
                 <h2 className="font-display text-2xl font-semibold uppercase leading-tight text-white">
                   Active leak right now?
                 </h2>
@@ -164,14 +164,14 @@ export default function ContactPage() {
                 </p>
                 <a
                   href={site.phoneHref}
-                  className="mt-5 inline-flex items-center gap-2 bg-brand-600 px-6 py-3 font-display text-lg font-semibold uppercase tracking-[0.08em] text-white transition-colors hover:bg-brand-700"
+                  className="mt-5 inline-flex items-center gap-2 rounded-control bg-brand-600 px-6 py-3 font-display text-lg font-semibold uppercase tracking-[0.08em] text-white shadow-button transition-[background-color,box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:bg-brand-700 hover:shadow-button-hover"
                 >
                   <PhoneIcon className="h-[1.15rem] w-[1.15rem]" />
                   Call Now
                 </a>
               </div>
 
-              <div data-reveal="right" className="border border-bone-300 bg-bone-50 p-7">
+              <div data-reveal="right" className="rounded-surface bg-bone-50 p-7 shadow-card">
                 <h2 className="font-display text-xl font-semibold uppercase tracking-[0.06em]">
                   Serving the whole Bay Area
                 </h2>

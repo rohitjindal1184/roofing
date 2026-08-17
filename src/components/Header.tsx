@@ -22,10 +22,21 @@ function isActive(pathname: string, href: string) {
 export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
 
   const closeMenu = () => setMenuOpen(false);
+
+  // Lifts the main bar off the page with a soft shadow once content has
+  // scrolled beneath it — flat while pinned to the top, like the rest of
+  // the system's flat-by-default surfaces.
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 4);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   // Escape closes the menu and returns focus to the toggle.
   useEffect(() => {
@@ -82,7 +93,11 @@ export default function Header() {
       </div>
 
       {/* Main bar */}
-      <div className="border-b border-white/10 bg-ink-900">
+      <div
+        className={`border-b border-white/10 bg-ink-900 transition-shadow duration-200 ${
+          scrolled ? "shadow-float" : ""
+        }`}
+      >
         <Container className="flex items-center justify-between gap-6 py-3.5">
           <Link
             href="/"
@@ -131,7 +146,7 @@ export default function Header() {
                           />
                         </svg>
                       </Link>
-                      <div className="invisible absolute left-0 top-full z-50 w-80 border border-white/10 bg-ink-800 opacity-0 shadow-2xl transition-opacity duration-150 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                      <div className="invisible absolute left-0 top-full z-50 mt-2 w-80 overflow-hidden rounded-surface border border-white/10 bg-ink-800 opacity-0 shadow-float transition-opacity duration-150 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
                         <ul className="py-2">
                           {services.map((service) => (
                             <li key={service.slug}>
@@ -186,7 +201,7 @@ export default function Header() {
 
             <Link
               href="/contact"
-              className="hidden items-center gap-2 bg-brand-600 px-6 py-3 font-display text-lg font-semibold uppercase tracking-[0.08em] text-white transition-colors hover:bg-brand-700 lg:inline-flex"
+              className="hidden items-center gap-2 rounded-control bg-brand-600 px-6 py-3 font-display text-lg font-semibold uppercase tracking-[0.08em] text-white shadow-button transition-[background-color,box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:bg-brand-700 hover:shadow-button-hover lg:inline-flex"
             >
               Get a Free Quote
               <ArrowRight />
@@ -199,7 +214,7 @@ export default function Header() {
               onClick={() => setMenuOpen((open) => !open)}
               aria-expanded={menuOpen}
               aria-controls="mobile-nav"
-              className="flex items-center gap-2 border border-white/25 px-3.5 py-2.5 font-display text-base font-semibold uppercase tracking-[0.08em] text-white lg:hidden"
+              className="flex items-center gap-2 rounded-control border border-white/25 px-3.5 py-2.5 font-display text-base font-semibold uppercase tracking-[0.08em] text-white lg:hidden"
             >
               <span className="relative flex h-3.5 w-5 flex-col justify-between">
                 <span
@@ -231,7 +246,7 @@ export default function Header() {
           <div
             ref={panelRef}
             id="mobile-nav"
-            className="max-h-[calc(100dvh-5rem)] overflow-y-auto border-t border-white/10 bg-ink-900 lg:hidden"
+            className="max-h-[calc(100dvh-5rem)] overflow-y-auto border-t border-white/10 bg-ink-900 shadow-float lg:hidden"
           >
             <nav aria-label="Mobile primary">
               <Container className="py-4">

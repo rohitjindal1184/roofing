@@ -15,7 +15,7 @@ import { site } from "@/lib/site";
 type Status = "idle" | "submitting" | "success" | "error";
 
 const fieldClass =
-  "w-full border border-bone-300 bg-white px-4 py-3 text-base text-ink-900 placeholder:text-ink-500/70 focus:border-brand-600";
+  "w-full rounded-control border border-bone-300 bg-white px-4 py-3 text-base text-ink-900 shadow-xs placeholder:text-ink-500/70 focus:border-brand-600";
 const errorFieldClass = "border-brand-700 bg-brand-600/5";
 const labelClass =
   "block font-display text-base font-semibold uppercase tracking-[0.08em] text-ink-900";
@@ -97,7 +97,7 @@ export default function ContactForm() {
     return (
       <div
         role="status"
-        className="border-t-2 border-brand-600 bg-bone-50 p-8 sm:p-10"
+        className="rounded-b-surface border-t-2 border-brand-600 bg-bone-50 p-8 shadow-card sm:p-10"
       >
         <h2 className="font-display text-3xl font-bold uppercase leading-tight">
           Request received
@@ -119,7 +119,7 @@ export default function ContactForm() {
             setStatus("idle");
             setStatusMessage("");
           }}
-          className="mt-8 inline-flex items-center gap-2 border-2 border-ink-900 px-6 py-3 font-display text-base font-semibold uppercase tracking-[0.08em] text-ink-900 transition-colors hover:bg-ink-900 hover:text-white"
+          className="mt-8 inline-flex items-center gap-2 rounded-control border-2 border-ink-900 px-6 py-3 font-display text-base font-semibold uppercase tracking-[0.08em] text-ink-900 transition-colors hover:bg-ink-900 hover:text-white"
         >
           Send another request
         </button>
@@ -136,7 +136,7 @@ export default function ContactForm() {
     <form
       noValidate
       onSubmit={handleSubmit}
-      className="border-t-2 border-ink-900 bg-bone-50 p-6 sm:p-9"
+      className="rounded-b-surface border-t-2 border-ink-900 bg-bone-50 p-6 shadow-card sm:p-9"
     >
       <h2 className="font-display text-3xl font-bold uppercase leading-tight">
         Request a free quote
@@ -151,7 +151,7 @@ export default function ContactForm() {
           ref={errorSummaryRef}
           tabIndex={-1}
           role="alert"
-          className="mt-6 border-l-4 border-brand-700 bg-brand-600/10 p-4"
+          className="mt-6 rounded-control border border-brand-700/50 bg-brand-600/10 p-4"
         >
           <p className="font-semibold text-brand-800">{statusMessage}</p>
           {errorEntries.length > 0 && (
@@ -345,7 +345,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="inline-flex items-center justify-center gap-2 border-2 border-brand-600 bg-brand-600 px-7 py-3 font-display text-lg font-semibold uppercase tracking-[0.08em] text-white transition-colors hover:border-brand-700 hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-70"
+          className="inline-flex items-center justify-center gap-2 rounded-control border-2 border-brand-600 bg-brand-600 px-7 py-3 font-display text-lg font-semibold uppercase tracking-[0.08em] text-white shadow-button transition-[background-color,border-color,box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:border-brand-700 hover:bg-brand-700 hover:shadow-button-hover disabled:cursor-not-allowed disabled:translate-y-0 disabled:opacity-70 disabled:shadow-none"
         >
           {status === "submitting" ? "Sending…" : "Send my request"}
           {status !== "submitting" && <ArrowRight />}

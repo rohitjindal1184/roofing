@@ -166,7 +166,7 @@ export default function CityDetail({ city }: { city: City }) {
 
               <figure
                 data-reveal
-                className="relative mt-10 aspect-[16/9] overflow-hidden bg-ink-800"
+                className="relative mt-10 aspect-[16/9] overflow-hidden rounded-surface bg-ink-800 shadow-card"
               >
                 <Image
                   src={heroImage.src}
@@ -179,7 +179,7 @@ export default function CityDetail({ city }: { city: City }) {
 
               <div
                 data-reveal
-                className="mt-10 border-t-2 border-brand-600 bg-bone-50 p-6 sm:p-8"
+                className="mt-10 rounded-b-surface border-t-2 border-brand-600 bg-bone-50 p-6 shadow-card sm:p-8"
               >
                 <h2 className="font-display text-2xl font-semibold uppercase leading-tight">
                   Common problems on roofs around here
@@ -212,7 +212,7 @@ export default function CityDetail({ city }: { city: City }) {
 
             {/* Sidebar */}
             <aside className="lg:sticky lg:top-28 lg:self-start">
-              <div data-reveal="right" className="bg-ink-900 p-7 text-bone-200">
+              <div data-reveal="right" className="rounded-surface bg-ink-900 p-7 text-bone-200 shadow-card">
                 <h2 className="font-display text-2xl font-semibold uppercase leading-tight text-white">
                   Free quotes in {city.name}
                 </h2>
@@ -250,7 +250,7 @@ export default function CityDetail({ city }: { city: City }) {
 
               <div
                 data-reveal="right"
-                className="mt-6 border border-bone-300 bg-bone-50 p-7"
+                className="mt-6 rounded-surface bg-bone-50 p-7 shadow-card"
               >
                 <h2 className="font-display text-xl font-semibold uppercase tracking-[0.06em]">
                   Office
@@ -297,7 +297,7 @@ export default function CityDetail({ city }: { city: City }) {
                     "--reveal-delay": `${(index % 3) * 90}ms`,
                   } as React.CSSProperties
                 }
-                className="group relative flex flex-col border border-bone-300 bg-bone-50 p-6 transition-colors duration-200 hover:border-brand-600"
+                className="group relative flex flex-col rounded-surface bg-bone-50 p-6 shadow-card transition-[box-shadow,transform] duration-200 hover:-translate-y-1 hover:shadow-card-hover"
               >
                 <h3 className="font-display text-xl font-semibold uppercase leading-tight tracking-[0.02em]">
                   <Link
@@ -354,7 +354,7 @@ export default function CityDetail({ city }: { city: City }) {
                   <li key={item.id}>
                     <Link
                       href={cityPath(item)}
-                      className="inline-block border border-bone-300 bg-bone-50 px-3.5 py-2 text-sm font-medium text-ink-800 transition-colors hover:border-brand-600 hover:text-brand-800"
+                      className="inline-block rounded-control border border-bone-300 bg-bone-50 px-3.5 py-2 text-sm font-medium text-ink-800 transition-colors hover:border-brand-600 hover:text-brand-800"
                     >
                       Roofing in {item.name}
                     </Link>

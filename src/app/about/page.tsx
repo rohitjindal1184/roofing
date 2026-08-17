@@ -69,7 +69,7 @@ export default function AboutPage() {
         <Container className="py-16 sm:py-24">
           <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
             <div data-reveal="left" className="relative">
-              <div className="relative aspect-[4/5] overflow-hidden bg-ink-800">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-surface bg-ink-800 shadow-card">
                 <Image
                   src="/images/one-roofing-crew-at-work.jpg"
                   alt="ONE ROOFING technician carrying a toolbox up a ladder while a colleague measures the wall below"
@@ -79,7 +79,7 @@ export default function AboutPage() {
                   className="object-cover object-top"
                 />
               </div>
-              <div className="absolute bottom-0 right-0 max-w-[16rem] bg-ink-900 p-6 text-white">
+              <div className="absolute -bottom-6 right-6 max-w-[16rem] rounded-surface bg-ink-900 p-6 text-white shadow-float">
                 <p className="font-display text-lg font-semibold uppercase leading-tight">
                   Licensed, Bonded &amp; Insured
                 </p>
@@ -143,7 +143,7 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div className="mt-12 grid gap-px overflow-hidden border border-bone-300 bg-bone-300 sm:grid-cols-2">
+          <div className="mt-12 grid gap-px overflow-hidden rounded-surface border border-bone-300 bg-bone-300 sm:grid-cols-2">
             {principles.map((principle, index) => (
               <div
                 key={principle.title}
@@ -194,7 +194,7 @@ export default function AboutPage() {
               </ul>
             </div>
 
-            <div data-reveal="right" className="relative min-h-[22rem] overflow-hidden bg-ink-800">
+            <div data-reveal="right" className="relative min-h-[22rem] overflow-hidden rounded-surface bg-ink-800 shadow-card">
               <Image
                 src="/images/project-roof-detail-large.jpg"
                 alt="ONE ROOFING foreman standing between newly raised timber roof trusses on a Bay Area project"
