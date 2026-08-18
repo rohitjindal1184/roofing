@@ -13,10 +13,13 @@ import { PhoneIcon } from "@/components/ui";
 export default function MobileCtaBar() {
   return (
     <div
-      className="fixed inset-x-0 bottom-0 z-40 [transform:translateZ(0)] border-t border-white/10 bg-ink-900 shadow-float will-change-transform md:hidden"
+      className="fixed inset-x-0 bottom-0 z-40 [transform:translate3d(0,0,0)] backface-hidden border-t border-white/10 bg-ink-900 shadow-float will-change-transform md:hidden"
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
-      <div className="grid grid-cols-2">
+      {/* iOS Safari can flicker/drop a fixed element's *children* during
+          momentum scroll even once the fixed element itself has its own
+          compositing layer — the GPU-layer hack has to be repeated here. */}
+      <div className="grid grid-cols-2 [transform:translate3d(0,0,0)] backface-hidden">
         <a
           href={site.phoneHref}
           className="flex items-center justify-center gap-2 py-4 font-display text-lg font-semibold uppercase tracking-[0.08em] text-white"
