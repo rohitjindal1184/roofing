@@ -9,7 +9,7 @@ import {
   StatsBand,
   TrustBar,
 } from "@/components/sections";
-import Hero from "@/components/hero/Hero";
+import Hero from "@/components/hero/HeroParallaxSettle";
 import {
   ArrowRight,
   ButtonLink,
@@ -153,8 +153,7 @@ export default function HomePage() {
       <LocalBusinessJsonLd />
 
       {/* ---------------------------------------------------------------- */}
-      {/* Hero — variant picked by NEXT_PUBLIC_HERO_VARIANT, see            */}
-      {/* src/lib/experiments.ts and src/components/hero/Hero.tsx          */}
+      {/* Hero                                                              */}
       {/* ---------------------------------------------------------------- */}
       <Hero />
 

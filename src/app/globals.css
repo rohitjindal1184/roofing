@@ -184,13 +184,12 @@
 }
 
 /* =========================================================================
-   Hero scroll variants (see src/lib/experiments.ts)
+   Hero scroll-settle
+   HeroScrollDriver writes --hero-p (0→1, how far the hero has scrolled past
+   the top of the viewport) onto [data-hero-scroll]. Content scales down and
+   fades, the scrim deepens slightly, as the hero leaves. The custom property
+   inherits to descendants, so no extra JS per layer.
    ========================================================================= */
-
-/* parallax-settle: HeroScrollDriver writes --hero-p (0→1, how far the hero
-   has scrolled past the top of the viewport) onto [data-hero-scroll]. Content
-   scales down and fades, the scrim deepens slightly, as the hero leaves. The
-   custom property inherits to descendants, so no extra JS per layer. */
 [data-hero-scroll] {
   --hero-p: 0;
 }
@@ -202,36 +201,6 @@
 
 [data-hero-scroll] [data-hero-layer="scrim"] {
   opacity: calc(0.85 + var(--hero-p) * 0.15);
-}
-
-/* stats-rise: the compact proof-stat row starts hidden below its resting
-   position and rises into place as StatsRiseStrip advances --stats-p. */
-[data-stats-rise] {
-  --stats-p: 0;
-  opacity: var(--stats-p);
-  transform: translate3d(0, calc((1 - var(--stats-p)) * 22px), 0);
-}
-
-/* chevron-cue: a small bouncing scroll indicator, faded out once the visitor
-   actually starts scrolling (handled by ScrollCue.tsx toggling opacity). */
-@keyframes hero-chevron-nudge {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-  50% {
-    transform: translate3d(0, 6px, 0);
-  }
-}
-
-[data-hero-chevron] svg {
-  animation: hero-chevron-nudge 2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  [data-hero-chevron] svg {
-    animation: none;
-  }
 }
 
 /* Thin uppercase eyebrow label used above section headings. */
