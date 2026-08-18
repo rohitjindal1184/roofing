@@ -1113,6 +1113,8 @@ export function serviceMetadata(slug: string) {
       images: [
         {
           url: service.heroImage.src,
+          width: service.heroImage.width,
+          height: service.heroImage.height,
           alt: service.heroImage.alt,
         },
       ],
@@ -1135,6 +1137,8 @@ export function cityMetadata(city: City) {
       images: [
         {
           url: "/images/project-shingle-roof-large.jpg",
+          width: 4542,
+          height: 2554,
           alt: `ONE ROOFING technician on a rooftop serving ${city.name}, California`,
         },
       ],

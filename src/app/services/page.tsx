@@ -19,6 +19,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/images/project-tile-roof-large.jpg",
+        width: 7360,
+        height: 4140,
         alt: "ONE ROOFING installer working on a residential shingle roof",
       },
     ],
