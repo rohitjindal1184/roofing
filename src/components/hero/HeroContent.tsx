@@ -13,7 +13,7 @@ export default function HeroContent({ children }: { children?: ReactNode }) {
   return (
     <Container
       data-hero-layer="content"
-      className="relative flex min-h-[34rem] flex-col justify-center py-16 sm:min-h-[38rem] sm:py-24 lg:min-h-[44rem]"
+      className="relative flex min-h-[28rem] flex-col justify-center py-8 sm:min-h-[38rem] sm:py-24 lg:min-h-[44rem]"
     >
       <div className="max-w-3xl">
         <p
@@ -42,7 +42,7 @@ export default function HeroContent({ children }: { children?: ReactNode }) {
         <p
           data-hero-in
           style={{ "--hero-delay": "230ms" } as React.CSSProperties}
-          className="mt-6 max-w-xl text-lg leading-relaxed text-bone-200 sm:text-xl"
+          className="mt-4 max-w-xl text-lg leading-relaxed text-bone-200 sm:mt-6 sm:text-xl"
         >
           Replacement, repair and inspection for homes and commercial
           buildings across San Francisco and 30+ Bay Area cities — backed by
@@ -52,7 +52,7 @@ export default function HeroContent({ children }: { children?: ReactNode }) {
         <div
           data-hero-in
           style={{ "--hero-delay": "330ms" } as React.CSSProperties}
-          className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
+          className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:items-center"
         >
           <ButtonLink href="/contact" variant="primary">
             Get a Free Quote
@@ -66,7 +66,7 @@ export default function HeroContent({ children }: { children?: ReactNode }) {
         <dl
           data-hero-in
           style={{ "--hero-delay": "420ms" } as React.CSSProperties}
-          className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-white/15 pt-6 text-sm"
+          className="mt-10 hidden flex-wrap items-center gap-x-8 gap-y-4 border-t border-white/15 pt-6 text-sm md:flex"
         >
           <div>
             <dt className="uppercase tracking-[0.16em] text-bone-300">
