@@ -10,6 +10,7 @@ import {
   TrustBar,
 } from "@/components/sections";
 import Hero from "@/components/hero/Hero";
+import { isHeroVariant } from "@/lib/experiments";
 import {
   ArrowRight,
   ButtonLink,
@@ -147,7 +148,18 @@ function LocalBusinessJsonLd() {
   );
 }
 
-export default function HomePage() {
+export default async function HomePage({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  // `?hero=<variant>` lets HeroVariantSwitcher preview a variant without
+  // touching NEXT_PUBLIC_HERO_VARIANT. Reading searchParams opts the
+  // homepage into dynamic rendering — see HeroVariantSwitcher.tsx.
+  const params = await searchParams;
+  const rawHero = Array.isArray(params.hero) ? params.hero[0] : params.hero;
+  const heroOverride = isHeroVariant(rawHero) ? rawHero : undefined;
+
   return (
     <>
       <LocalBusinessJsonLd />
@@ -156,7 +168,7 @@ export default function HomePage() {
       {/* Hero — variant picked by NEXT_PUBLIC_HERO_VARIANT, see            */}
       {/* src/lib/experiments.ts and src/components/hero/Hero.tsx          */}
       {/* ---------------------------------------------------------------- */}
-      <Hero />
+      <Hero variant={heroOverride} />
 
       <TrustBar />
 
