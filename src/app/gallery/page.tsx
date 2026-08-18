@@ -20,6 +20,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/images/project-roof-detail-large.jpg",
+        width: 6571,
+        height: 3697,
         alt: "ONE ROOFING foreman standing between newly raised roof trusses",
       },
     ],

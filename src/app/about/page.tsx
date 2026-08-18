@@ -26,6 +26,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/images/one-roofing-crew-at-work.jpg",
+        width: 4912,
+        height: 4993,
         alt: "ONE ROOFING crew working at the eaves of a residential property",
       },
     ],
